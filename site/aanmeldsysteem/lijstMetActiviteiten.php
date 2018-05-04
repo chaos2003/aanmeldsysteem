@@ -16,7 +16,7 @@ if(isset($_GET['alle-meldingen'])) {
 			
 }
 
- 
+
 $stmt->execute();
 $response = $stmt->get_result();
 if($response){
