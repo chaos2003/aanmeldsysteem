@@ -1,0 +1,35 @@
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
+<?php
+//Variablen worden verzameld, hier wordt nog niets gedisplayed. Met deze variablen wordt de vorige melding
+//van de huidige activiteit (indien aanwezig) automatisch ingevuld om aan te kunnen passen.
+
+$MijnMeldingError = true;
+$MijnMeldingType = "melden";
+$MijnMeldingBorrelen = "";
+$MijnMeldingEten = "";
+$MijnMeldingEigenturf = "";
+$MijnMeldingOpmerking = "";
+
+include('mysqli_connect.php');
+$query = "SELECT borrelen, eten, eigenturf, opmerking FROM melding WHERE FK_chaoot = ? AND FK_activiteit = ?;";
+$stmt = $dbc->prepare($query);
+$stmt->bind_param('ii', $_COOKIE['chaootID'], $_GET['id']); // 's' specifies the variable type => 'string'
+$stmt->execute();
+$response = $stmt->get_result();
+
+if($response){
+	
+	$MijnMeldingError = false;
+	if ($row = mysqli_fetch_array($response)){
+		$MijnMeldingType = "update";
+		if ($row['borrelen']) { $MijnMeldingBorrelen = "checked"; }
+		if ($row['eten']) { $MijnMeldingEten = "checked"; }
+		if ($row['eigenturf']) { $MijnMeldingEigenturf = "checked"; }
+		$MijnMeldingOpmerking = $row['opmerking'];
+	}
+} else {
+	echo "Couldn't issue database query<br />";
+	echo mysqli_error($dbc);
+}
+mysqli_close($dbc);
+?>
