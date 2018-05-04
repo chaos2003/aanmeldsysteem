@@ -74,7 +74,7 @@ if ($chaoot_ingelogd) {
 			
 			
 			echo '
-			<p><a href="maandoverzicht.php" style="color:cyan;">Terug naar maandoverzicht</a></p>
+			<p><a href="maandoverzicht" style="color:cyan;">Terug naar maandoverzicht</a></p>
 			<table>
 			<tr><td><b>Activiteit</b>:</td><td>' . $dezeActiviteitTitel . '</td></tr>
 			<tr><td><b>Omschrijving</b>:&nbsp;&nbsp;&nbsp;</td><td>' . $dezeActiviteitOmschrijving . '</td></tr>
@@ -83,7 +83,7 @@ if ($chaoot_ingelogd) {
 			<tr><td><b>Naam</b>:</td><td>' . $chaoot . '</td></tr>
 			</table>';
 
-			echo '<form action="activiteit.php?id=' . $_GET['id'] . '" method="post">
+			echo '<form action="activiteit?id=' . $_GET['id'] . '" method="post">
 				<p>
 				<input type="checkbox" name="eten" size="30" ' . $MijnMeldingEten . '/> eten<br>
 				<input type="checkbox" name="borrelen" size="30" ' . $MijnMeldingBorrelen . '/> borrelen<br>
@@ -96,7 +96,7 @@ if ($chaoot_ingelogd) {
 				<input type="submit" name="submit" value="' . $MijnMeldingType . '" /><br>
 				</p>
 			</form>
-			<form action="activiteit.php?id=' . $_GET['id'] . '" method="post">
+			<form action="activiteit?id=' . $_GET['id'] . '" method="post">
 				<p>
 				Sorteren op:
 				<select name="sort">

@@ -53,7 +53,7 @@ if(isset($_POST['submit']) && isset($_POST['datum']) && isset($_POST['type']) &&
 						</style>
 						</head>
 						<body>
-						<p><a hrefactiviteit.php?id=" . $IdActiviteit . "'>Klik hier om je aan- of af te melden</a></p>
+						<p><a hrefactiviteit?id=" . $IdActiviteit . "'>Klik hier om je aan- of af te melden</a></p>
 						<table>
 						<tr>
 						<th>Datum</th>
@@ -90,7 +90,7 @@ if(isset($_POST['submit']) && isset($_POST['datum']) && isset($_POST['type']) &&
 					//mail($to, $subject, $msg, $headers);
 					
 					echo '<p style="color:lime;">Activiteit succesvol aangemaakt!</p><br>
-					<p><a style="color:cyan;" href="activiteit.php?id=' . $IdActiviteit . '">Klik hier om je aan- of af te melden</a></p>';
+					<p><a style="color:cyan;" href="activiteit?id=' . $IdActiviteit . '">Klik hier om je aan- of af te melden</a></p>';
 				} else {
 					echo "<h2 style='color:red;'>Holy Fuck. Wat is er misgegaan? Controleer of de activiteit is aangemaakt.</h2>";
 					

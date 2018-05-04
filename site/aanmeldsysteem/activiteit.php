@@ -1,12 +1,13 @@
-<link rel="shortcut icon" type="image/png" href="/favicon.png">
 <?php
 	if(isset($_POST['sorteerorde']) && isset($_POST['sort'])){
 		setcookie('sort', $_POST['sort']);
 		header("Refresh:0");
 	}
 ?>
+<link rel="shortcut icon" type="image/png" href="/favicon.png">
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
 	<style>
 	body {
 			color: white;

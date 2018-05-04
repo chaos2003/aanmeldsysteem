@@ -28,6 +28,11 @@
 		border: 0px solid yellow;
 		border-collapse: separate;
 	}
+	.topcorner{
+		position:absolute;
+		top:20;
+		right:20;
+	  }
 	</style>
 </head>
 	<body style="background-color:Black;">
@@ -43,9 +48,18 @@
 require_once('inloggen.php');
 //Zet Chaoten in lijst
 if ($chaoot_ingelogd) {
-	echo '<h1>Maandoverzicht DIT IS NIET DE GOEDE SITE. GA NAAR <a href="http://www.chaos2003.nl">chaos2003.nl</a></h1>
-	<p><a style="color:cyan;" href="maakActiviteitAan.php">Klik hier om een nieuwe activiteit toe te voegen.</a><br><br>
-	Druk op een datum om naar die activiteit te springen.</p>';
+	echo '<h1>Maandoverzicht DIT IS NIET DE GOEDE SITE. GA NAAR <a href="http://www.chaos2003.nl">chaos2003.nl</a></h1>';
+	
+	echo '<div class="topcorner">
+		<p>
+		<a style="color:cyan;" href="maakActiviteitAan">Nieuwe activiteit</a><br>
+		<a style="color:cyan;" href="instellingen">Persoonlijke instellingen</a><br>';
+	//Admins kunnen activiteiten verwijderen
+	if ($chaoot == 'Jordy Ubink' || $chaoot == 'Bas Liesker') {
+		echo '<a style="color:red;" href="verwijder-activiteit">Activiteit verwijderen</a><br>';
+	}
+	echo '</p>
+	</div>';
 	
 	//Jaar en Maand kiezen om meldingen te zien van een andere periode
 	$jaar =  (isset($_GET['jaar'] )) ? $_GET['jaar'] : date("Y");
@@ -75,15 +89,16 @@ if ($chaoot_ingelogd) {
 			echo '</select>
 		   </td>
 		 </tr>
-		 </table>
+		 </table><br>
 		 <input type="submit" value="Bekijk maand">
-	</form>';
+	</form><br><br>
+	<p>Druk op een datum om naar die activiteit te springen.</p>
+	';
 	
 	
 	include('lijstMetChaoten.php');
-	echo '<br><br>';
+	echo '<br>';
 	require('lijstMetActiviteiten.php');
-	echo '<br><br>';
 	require('lijstMetMeldingen.php');
 	
 	echo '<p><b>Legenda:</b><br>

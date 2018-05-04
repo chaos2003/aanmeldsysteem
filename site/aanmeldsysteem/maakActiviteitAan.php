@@ -12,7 +12,7 @@ echo '
 	</head>
 	<body style="background-color:Black;">
 	<h1>Activiteit aanmaken</h1>
-	<form action="stuurMail.php" method="post">
+	<form action="stuurMail" method="post">
 		<p><b>
 		Datum:<br><input type="date" name="datum"><br><br>
 		Type:<br><select name="type" size="6">
