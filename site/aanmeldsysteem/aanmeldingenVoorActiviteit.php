@@ -83,17 +83,23 @@ if ($chaoot_ingelogd) {
 			<tr><td><b>Naam</b>:</td><td>' . $chaoot . '</td></tr>
 			</table>';
 
+			//<input type="submit" name="eten" value="' . $MijnMeldingEten . '" /><br>
+			//<input type="checkbox" name="borrelen" size="30" ' . $MijnMeldingBorrelen . '/> borrelen<br>
+			//<input type="checkbox" name="eigenturf" size="30" ' . $MijnMeldingEigenturf . '/> Ik turf vandaag niet op Chaos<br><br>
+			
 			echo '<form action="activiteit?id=' . $_GET['id'] . '" method="post">
 				<p>
-				<input type="checkbox" name="eten" size="30" ' . $MijnMeldingEten . '/> eten<br>
-				<input type="checkbox" name="borrelen" size="30" ' . $MijnMeldingBorrelen . '/> borrelen<br>
-				<input type="checkbox" name="eigenturf" size="30" ' . $MijnMeldingEigenturf . '/> Ik turf vandaag niet op Chaos<br><br>
+				
+				<input type="submit" name="eten" value="Eten" />
+				<input type="submit" name="eten-en-borrelen" value="Eten en borrelen" />
+				<input type="submit" name="borrelen" value="Borrelen" /><br><br>
+				
 				opmerking:<br>
 				<input type="text" name="opmerking" size="30" value="' . $MijnMeldingOpmerking . '"/><br><br>
 				
 				<input type="hidden" name="activiteit" value="' . $_GET["id"] . '" />
 				
-				<input type="submit" name="submit" value="' . $MijnMeldingType . '" /><br>
+				<input type="hidden" name="submit" value="' . $MijnMeldingType . '" /><br>
 				</p>
 			</form>
 			<form action="activiteit?id=' . $_GET['id'] . '" method="post">

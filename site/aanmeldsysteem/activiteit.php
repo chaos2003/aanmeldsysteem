@@ -22,8 +22,16 @@ require_once('inloggen.php');
 <?php
 if(isset($_POST['submit'])){
 	if ($chaoot_ingelogd) {
-		$p_eten = (empty($_POST['eten'])) ? "0" : "1";
-		$p_borrelen = (empty($_POST['borrelen'])) ? "0" : "1";
+		$p_eten = "0";
+		$p_borrelen = "0";
+		
+		if(isset($_POST['eten']) || isset($_POST['eten-en-borrelen'])) {
+			$p_eten = "1";
+		}
+		if(isset($_POST['borrelen']) || isset($_POST['eten-en-borrelen'])) {
+			$p_borrelen = "1";
+		}
+		
 		$p_eigenturf = (empty($_POST['eigenturf'])) ? "0" : "1";
 		$opmerking = htmlspecialchars($_POST['opmerking'], ENT_QUOTES, 'UTF-8');
 		
