@@ -82,7 +82,7 @@ if(isset($_POST['verwijder_activiteit'])){
 
 ?>
 
-<form action="verwijder-activiteit.php" method="post">
+<form action="verwijder-activiteit" method="post">
 		<p><b>
 		ID:<br><input type="text" name="id"><br><br>
 		<input type="submit" name="verwijder_meldingen" value="Verwijder meldingen" /><br>

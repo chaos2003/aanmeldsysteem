@@ -1,17 +1,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.png">
 <?php
-/*
-$meldingCell[0] = '<td style="background-color:black;text-align: center;">?</td>';
-$meldingCell[1] = '<td style="background-color:green;text-align: center;">B</td>';
-$meldingCell[2] = '<td style="background-color:gray;text-align: center;">X</td>';
-$meldingCell[3] = '<td style="background-color:yellow;color:black;text-align: center;">E</td>';
-$meldingCell[4] = '<td style="background-color:red;text-align: center;">A</td>';
-*/
+//Voor NIET-WANBETALERS
 $meldingCell[0] = '<td style="background-color:black;text-align: center;"></td>';
 $meldingCell[1] = '<td style="background-color:green;text-align: center;"></td>';
 $meldingCell[2] = '<td style="background-color:gray;text-align: center;"></td>';
 $meldingCell[3] = '<td style="background-color:yellow;color:black;text-align: center;"></td>';
 $meldingCell[4] = '<td style="background-color:red;text-align: center;"></td>';
+
+//Voor WANBETALERS
+if(isset($_COOKIE['wanbetaler'])){
+	if ($_COOKIE['wanbetaler'] == "1") {
+		$meldingCell[0] = '<td style="background-color:black;text-align: center;">?</td>';
+		$meldingCell[1] = '<td style="background-color:green;text-align: center;">B</td>';
+		$meldingCell[2] = '<td style="background-color:gray;text-align: center;">X</td>';
+		$meldingCell[3] = '<td style="background-color:yellow;color:black;text-align: center;">E</td>';
+		$meldingCell[4] = '<td style="background-color:red;text-align: center;">A</td>';
+	}
+}
+
 //$antwoord[] = { 0=zwart/undefined, 1=groen/borrelen, 2=zwart/x(geen turf), 3=geel/eten, 4=rood/afwezig, }
 
 
@@ -50,7 +56,7 @@ if($response){
 	foreach ($activiteit as &$eenActiviteit) {
 			echo '
 			<th>
-				<a style="color:white;text-decoration:none;" href="activiteit.php?id=' . $eenActiviteit[0] . '">
+				<a style="color:white;text-decoration:none;" href="activiteit?id=' . $eenActiviteit[0] . '">
 					<p class="activiteitTitel">'
 						. $eenActiviteit[3] .
 					'</p>

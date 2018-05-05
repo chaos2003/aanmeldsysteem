@@ -34,7 +34,7 @@ require_once('inloggen.php');
 //Zet Chaoten in lijst
 if ($chaoot_ingelogd) {
 	echo '<h1>Maandoverzicht*</h1>
-	<p><a style="color:cyan;" href="maakActiviteitAan.php">Klik hier om een nieuwe activiteit toe te voegen.</a><br><br>
+	<p><a style="color:cyan;" href="maakActiviteitAan">Klik hier om een nieuwe activiteit toe te voegen.</a><br><br>
 	Druk op een datum om naar die activiteit te springen.</p>';
 	include('lijstMetChaoten.php');
 	echo '<br><br>';

@@ -5,7 +5,7 @@ $chaoot_ingelogd = false;
 $chaoot = "";
 
 if(!(isset($_COOKIE['chaootID']) && isset($_COOKIE['chaootKey']))) {
-    echo "Cookie error. Er ontbreken cookies (chaootID of chaootKey). <a style='color:aqua;' href='login.php'>Log eerst in</a>";
+    echo "Cookie error. Er ontbreken cookies (chaootID of chaootKey). <a style='color:aqua;' href='login'>Log eerst in</a>";
 } else {
 	$cookie_error = false;
 	include('mysqli_connect.php');
@@ -30,7 +30,7 @@ if(!(isset($_COOKIE['chaootID']) && isset($_COOKIE['chaootKey']))) {
 				$chaoot = $row['naam'];
 				$chaoot_ingelogd = true;
 			} else {
-				echo '<p>Inlog error. Je ID+key combinatie klopt niet. <a style="color:aqua;" href="login.php">Log opnieuw in</a>.</p>';
+				echo '<p>Inlog error. Je ID+key combinatie klopt niet. <a style="color:aqua;" href="login">Log opnieuw in</a>.</p>';
 			}
 		}
 	} else {

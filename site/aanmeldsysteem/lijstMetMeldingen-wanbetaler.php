@@ -51,7 +51,7 @@ if($response){
 	foreach ($activiteit as &$eenActiviteit) {
 			echo '
 			<th>
-				<a style="color:white;text-decoration:none;" href="activiteit.php?id=' . $eenActiviteit[0] . '">
+				<a style="color:white;text-decoration:none;" href="activiteit?id=' . $eenActiviteit[0] . '">
 					<p class="activiteitTitel">'
 						. $eenActiviteit[3] .
 					'</p>
