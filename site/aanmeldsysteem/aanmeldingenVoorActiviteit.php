@@ -90,9 +90,11 @@ if ($chaoot_ingelogd) {
 			echo '<form action="activiteit?id=' . $_GET['id'] . '" method="post">
 				<p>
 				
-				<input type="submit" name="eten" value="Eten" />
-				<input type="submit" name="eten-en-borrelen" value="Eten en borrelen" />
-				<input type="submit" name="borrelen" value="Borrelen" /><br><br>
+				<input type="submit" class="meldknop" name="eten" size="100" value="🍽 Eten" ' . $MijnMeldingKnopEten . '/>
+				<input type="submit" class="meldknop" name="eten-en-borrelen" value="🍽 🍻 Eten en borrelen" ' . $MijnMeldingKnopEtenEnBorrelen . '/>
+				<input type="submit" class="meldknop" name="borrelen" value="🍻 Borrelen" ' . $MijnMeldingKnopBorrelen . '/>
+				<input type="submit" class="meldknop" name="afwezig" value="❌ Afwezig" ' . $MijnMeldingKnopAfwezig . '/><br><br>
+				<label style="margin: 0px;"><input type="checkbox" name="eigenturf" size="30" ' . $MijnMeldingEigenturf . '/> 💰 Ik turf vandaag niet op Chaos</label><br><br>
 				
 				opmerking:<br>
 				<input type="text" name="opmerking" size="30" value="' . $MijnMeldingOpmerking . '"/><br><br>

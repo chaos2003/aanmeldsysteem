@@ -7,6 +7,10 @@ $MijnMeldingError = true;
 $MijnMeldingType = "melden";
 $MijnMeldingBorrelen = "";
 $MijnMeldingEten = "";
+$MijnMeldingKnopEten = "style='background-color: rgb(255, 100, 100);'";
+$MijnMeldingKnopEtenEnBorrelen = "style='background-color: rgb(255, 100, 100);'";
+$MijnMeldingKnopBorrelen = "style='background-color: rgb(255, 100, 100);'";
+$MijnMeldingKnopAfwezig = "style='background-color: rgb(255, 100, 100);'";
 $MijnMeldingEigenturf = "";
 $MijnMeldingOpmerking = "";
 
@@ -26,6 +30,12 @@ if($response){
 		if ($row['eten']) { $MijnMeldingEten = "checked"; }
 		if ($row['eigenturf']) { $MijnMeldingEigenturf = "checked"; }
 		$MijnMeldingOpmerking = $row['opmerking'];
+		
+		if ( ($row['eten']) && !($row['borrelen'])) { $MijnMeldingKnopEten = "style='background-color: rgb(100, 255, 100);'"; }
+		if ( ($row['eten']) &&  ($row['borrelen'])) { $MijnMeldingKnopEtenEnBorrelen = "style='background-color: rgb(100, 255, 100);'"; }
+		if (!($row['eten']) &&  ($row['borrelen'])) { $MijnMeldingKnopBorrelen = "style='background-color: rgb(100, 255, 100);'"; }
+		if (!($row['eten']) && !($row['borrelen'])) { $MijnMeldingKnopAfwezig = "style='background-color: rgb(100, 255, 100);'"; }
+		
 	}
 } else {
 	echo "Couldn't issue database query<br />";

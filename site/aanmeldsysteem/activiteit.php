@@ -12,6 +12,11 @@
 	body {
 			color: white;
 	}
+	
+	input.meldknop {
+			width: 12em;  height: 3em;
+			color: black;
+	}
 	</style>
 </head>
 	<body style="background-color:Black;">
@@ -30,6 +35,11 @@ if(isset($_POST['submit'])){
 		}
 		if(isset($_POST['borrelen']) || isset($_POST['eten-en-borrelen'])) {
 			$p_borrelen = "1";
+		}
+		
+		if(isset($_POST['afwezig'])) {
+			//$p_eten = "0";
+			//$p_borrelen = "0";
 		}
 		
 		$p_eigenturf = (empty($_POST['eigenturf'])) ? "0" : "1";
